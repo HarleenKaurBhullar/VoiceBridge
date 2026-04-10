@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+            content="default-src 'self'; 
+           connect-src 'self' http://localhost:5000 http://localhost:5001 ws://localhost:5000; 
+           script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; 
+           style-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hero-section">
+    <div class="heading-box">
+    <h1 id="heading">VoiceBridge</h1>
+</div>
+<div class="heading-box">
+    <h2 id="sub-heading">Breaking Language Barriers, One Conversation at a Time</h2>
+</div>
+    <div id="description">Break language barriers and connect with people from around the world using our real-time translation meeting app. Start or join meetings, and let our app handle the translation for you, making communication seamless and effortless.</div>
+    <button id="startMeeting">Start Meeting</button>
+    <button id="joinMeeting">Join Meeting</button>
+    <div id="roomcode" style="display: none;">
+        <p>Share this room code with others to invite them:</p>
+        <p>Room Code: <span id="code"></span></p>
+        
+        <select id="hostlanguage1">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+        </select>
+        <select id="hostlanguage2">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+        </select>
+        <button id="startMeetingButton" > Start meeting</button>
+    </div>
+    <div id="receiver-roomcode" style="display: none;">
+        <p>Enter the Room code to join:</p>
+        <input type="text" id="join-code" placeholder="Room Code to join">
+        
+        <select id="memberlanguage1">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="fr-FR">French</option>
+        </select>
+        <select id="memberlanguage2">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="fr-FR">French</option>
+        </select>
+        <button id="joinMeetingButton"> Start meeting</button>
+    </div>
+        
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <script>
+    VANTA.BIRDS({
+        el: "#hero-section",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0x0,
+        color1: 0x8600ff,
+        color2: 0xff6ecb,
+        colorMode: "lerp",
+        wingSpan: 31.00,
+        speedLimit: 3.00,
+        separation: 63.00
+        })
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

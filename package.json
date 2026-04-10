@@ -1,0 +1,20 @@
+{
+  "name": "translate2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@andresaya/edge-tts": "^1.8.0",
+    "axios": "^1.14.0",
+    "edge-tts": "^1.0.1",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  }
+}

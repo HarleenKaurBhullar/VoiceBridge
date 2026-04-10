@@ -1,0 +1,172 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FULL DARK PAGE */
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #000; /* pure black */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.heading {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    /* Gradient purple text */
+    background: linear-gradient(90deg, #a855f7, #ec4899, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Glow effect */
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+
+    animation: float 3s ease-in-out infinite;
+}
+/* MAIN LAYOUT */
+body {
+    display: block;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+/* Container to hold the messages */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 10px 100px 10px;
+}
+/* Base style for all message boxes */
+.message {
+    max-width: 60%;
+    padding: 12px 18px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* SENDER (Right side - Purplish Gradient) */
+.sender {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #a855f7, #ec4899); 
+    color: white;
+    border-radius: 20px 20px 4px 20px; /* Sharp bottom-right corner */
+    text-align: right;
+}
+
+/* RECEIVER (Left side - Darker/Greyish Purple) */
+.receiver {
+    align-self: flex-start;
+    background: #1e1b4b; /* Deep Indigo/Navy */
+    color: #e9d5ff; /* Light purple text */
+    border: 1px solid #4c1d95;
+    border-radius: 20px 20px 20px 4px; /* Sharp bottom-left corner */
+    text-align: left;
+}
+
+/* Glossy effect for the sender box */
+.sender::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255,255,255,0.1), transparent);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* Microphone Button Base */
+#microphone-on {
+    position: fixed;
+    bottom: 30px;           /* Distance from bottom */
+    left: 50%;              /* Move to horizontal center */
+    transform: translateX(-50%); /* Centering trick */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: transform 0.2s ease;
+    z-index: 1000;
+}
+
+#microphone-on:hover {
+    transform: scale(1.05);
+}
+
+#microphone-on svg {
+    width: 26px;
+    height: 26px;
+    color: white;
+    z-index: 1;
+}
+
+/* Pulse rings — hidden by default */
+#microphone-on::before,
+#microphone-on::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    opacity: 0;
+    animation: none;
+}
+
+/* Show pulse only when mic is active */
+#microphone-on.active::before {
+    animation: pulse 1.8s ease-out infinite;
+}
+
+#microphone-on.active::after {
+    animation: pulse 1.8s ease-out infinite 0.6s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+.username {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.text {
+    font-size: 0.95rem;
+}
+
+.sender .username {
+    text-align: right;
+    color: #fbcfe8; /* light pink */
+}
+
+.receiver .username {
+    text-align: left;
+    color: #c4b5fd; /* light purple */
+}
