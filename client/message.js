@@ -2,7 +2,8 @@ const params = new URLSearchParams(window.location.search);
 const roomCode = params.get("roomId");
 const language1 = params.get("language1");
 const language2 = params.get("language2");
-const socket = io("http://localhost:5000");
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
+const socket = io(baseUrl);
 let microphoneon=false;
 const microphoneButton = document.getElementById("microphone-on");
 const displayCode = document.getElementById("Displaycode");
@@ -75,7 +76,7 @@ async function speakText(text, lang) {
 
     const langCode = lang && lang.includes('hi') ? 'hi' : 'en';
     console.log("TTS lang being sent:", langCode);
-    const res = await fetch(`http://localhost:5000/tts?text=${encodeURIComponent(text)}&lang=${langCode}`);
+    const res = await fetch(`${baseUrl}/tts?text=${encodeURIComponent(text)}&lang=${langCode}`);
 
     if (!res.ok) { console.error('TTS server error:', res.status); return; }
 

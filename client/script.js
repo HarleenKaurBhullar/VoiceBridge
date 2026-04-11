@@ -6,6 +6,7 @@ const startMeetingButton = document.getElementById('startMeetingButton');
 const joinroomid = document.getElementById('join-code');
 const receiverroomcode = document.getElementById('receiver-roomcode');
 const joinMeetingButton = document.getElementById('joinMeetingButton');
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
 startMeeting.addEventListener('click', async () => {
     const roomid = await createRoom();
     if (!roomid) return;
@@ -53,7 +54,7 @@ joinMeetingButton.addEventListener('click', () => {
 
 async function createRoom() {
     try {
-        const response = await fetch('http://localhost:5000/create-room');
+        const response = await fetch(`${baseUrl}/create-room`);
         const data = await response.json();
         return data.code;
     } catch (err) {
