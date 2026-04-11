@@ -6,7 +6,9 @@ const startMeetingButton = document.getElementById('startMeetingButton');
 const joinroomid = document.getElementById('join-code');
 const receiverroomcode = document.getElementById('receiver-roomcode');
 const joinMeetingButton = document.getElementById('joinMeetingButton');
-const baseUrl = import.meta.env.VITE_BACKEND_URL;
+import { API_BASE_URL } from './config.js';
+const baseUrl = API_BASE_URL;
+
 startMeeting.addEventListener('click', async () => {
     const roomid = await createRoom();
     if (!roomid) return;
