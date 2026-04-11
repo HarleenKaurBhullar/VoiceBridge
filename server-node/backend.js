@@ -13,8 +13,8 @@ const io = new Server(server, {
 });
 const axios = require("axios");
 const rooms = new Set();
-
-app.use(express.static("public"));
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client')));
 
 function generateRoomCode() {
     return crypto.randomUUID().slice(0, 8).toUpperCase();
