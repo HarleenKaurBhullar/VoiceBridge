@@ -13,6 +13,7 @@
   "dependencies": {
     "@andresaya/edge-tts": "^1.8.0",
     "axios": "^1.14.0",
+    "dotenv": "^17.4.1",
     "edge-tts": "^1.0.1",
     "express": "^5.2.1",
     "socket.io": "^4.8.3",
