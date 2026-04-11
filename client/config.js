@@ -4,4 +4,4 @@ const isLocalhost = window.location.hostname === 'localhost' ||
 
 export const API_BASE_URL = isLocalhost 
     ? 'http://localhost:5000' 
-    : 'https://your-service-name.onrender.com';
+    : 'https://voicebridge-1.onrender.com';
