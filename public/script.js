@@ -13,11 +13,13 @@ startMeeting.addEventListener('click', async () => {
     code.innerText = roomid;
     roomcode.style.display = 'block';
     receiverroomcode.style.display = 'none';
+    document.getElementById('modal-overlay').style.display = 'flex';
 });
 
 joinMeeting.addEventListener('click', () => {
     roomcode.style.display = 'none';
     receiverroomcode.style.display = 'block';
+    document.getElementById('modal-overlay').style.display = 'flex';
 });
 
 function checklanghost() {

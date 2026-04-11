@@ -22,36 +22,49 @@
     <div id="description">Break language barriers and connect with people from around the world using our real-time translation meeting app. Start or join meetings, and let our app handle the translation for you, making communication seamless and effortless.</div>
     <button id="startMeeting">Start Meeting</button>
     <button id="joinMeeting">Join Meeting</button>
-    <div id="roomcode" style="display: none;">
-        <p>Share this room code with others to invite them:</p>
-        <p>Room Code: <span id="code"></span></p>
-        
-        <select id="hostlanguage1">
-            <option value="en-US">English</option>
-            <option value="hi-IN">Hindi</option>
-        </select>
-        <select id="hostlanguage2">
-            <option value="en-US">English</option>
-            <option value="hi-IN">Hindi</option>
-        </select>
-        <button id="startMeetingButton" > Start meeting</button>
+    <!-- Modal Overlay -->
+<div class="overlay" id="modal-overlay" style="display: none;">
+    <div class="overlay-box">
+        <div id="roomcode">
+            <p>Share this room code with others to invite them:</p>
+            <p>Room Code: <span id="code"></span></p>
+            <select id="hostlanguage1">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="es-ES">Spanish</option>
+                <option value="fr-FR">French</option>
+                <option value="it-IT">Italian</option>
+            </select>
+            <select id="hostlanguage2">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="es-ES">Spanish</option>
+                <option value="fr-FR">French</option>
+                <option value="it-IT">Italian</option>
+            </select>
+            <button id="startMeetingButton">Start meeting</button>
+        </div>
+        <div id="receiver-roomcode" style="display: none;">
+            <p>Enter the Room code to join:</p>
+            <input type="text" id="join-code" placeholder="Room Code to join">
+            <select id="memberlanguage1">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="es-ES">Spanish</option>
+                <option value="fr-FR">French</option>
+                <option value="it-IT">Italian</option>
+            </select>
+            <select id="memberlanguage2">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="es-ES">Spanish</option>
+                <option value="fr-FR">French</option>   
+                <option value="it-IT">Italian</option>
+            </select>
+            <button id="joinMeetingButton">Start meeting</button>
+        </div>
     </div>
-    <div id="receiver-roomcode" style="display: none;">
-        <p>Enter the Room code to join:</p>
-        <input type="text" id="join-code" placeholder="Room Code to join">
-        
-        <select id="memberlanguage1">
-            <option value="en-US">English</option>
-            <option value="hi-IN">Hindi</option>
-            <option value="fr-FR">French</option>
-        </select>
-        <select id="memberlanguage2">
-            <option value="en-US">English</option>
-            <option value="hi-IN">Hindi</option>
-            <option value="fr-FR">French</option>
-        </select>
-        <button id="joinMeetingButton"> Start meeting</button>
-    </div>
+</div>
         
 
     </div>

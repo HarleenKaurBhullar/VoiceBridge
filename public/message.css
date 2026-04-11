@@ -16,9 +16,12 @@ html, body {
     overflow: hidden;
 }
 .heading {
-    font-size: 5rem;
+    font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* Gradient purple text */
     background: linear-gradient(90deg, #a855f7, #ec4899, #9333ea);
@@ -170,3 +173,4 @@ body {
     text-align: left;
     color: #c4b5fd; /* light purple */
 }
+

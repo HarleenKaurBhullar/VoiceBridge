@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
         io.to(room).emit("receive-translation", {
     user: socket.id,
     translatedText: translatedText,
-    language: response.data.language   // 👈 THIS FIXES EVERYTHING
+    language: response.data.target_language   // 👈 THIS FIXES EVERYTHING
 });
         console.log("Emitting to room:", room, "user:", socket.id, "Translated Text:", translatedText);
 
@@ -95,6 +95,15 @@ io.on("connection", (socket) => {
 })();
 // Add this alongside your existing socket.io setup
 // server.js — replace the endpoint
+
+const VOICE_MAP = {
+    en: 'en-US-AriaNeural',
+    hi: 'hi-IN-SwaraNeural',
+    fr: 'fr-FR-DeniseNeural',
+    es: 'es-ES-ElviraNeural',
+    it: 'it-IT-ElsaNeural'
+};
+
 app.get('/tts', async (req, res) => {
     const { text, lang } = req.query;
     if (!text) return res.status(400).send('No text');
@@ -104,9 +113,7 @@ app.get('/tts', async (req, res) => {
         
 
         const tts = new EdgeTTS();
-        const voice = lang && lang.includes('hi')
-            ? 'hi-IN-SwaraNeural'
-            : 'en-US-AriaNeural';
+        const voice = VOICE_MAP[lang] || 'en-US-AriaNeural';
 
         await tts.synthesize(text, voice, { rate: '-5%', volume: '90%' });
 

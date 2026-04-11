@@ -6,7 +6,7 @@ const socket = io("http://localhost:5000");
 let microphoneon=false;
 const microphoneButton = document.getElementById("microphone-on");
 const displayCode = document.getElementById("Displaycode");
-displayCode.innerText = `Room: ${roomCode}`;
+displayCode.innerText = `Meeting Id: ${roomCode}`;
 socket.on("connect", () => {
     console.log("Connected:", socket.id);
     socket.emit("join-room", roomCode);
