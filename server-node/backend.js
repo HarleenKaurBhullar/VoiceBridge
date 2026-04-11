@@ -4,6 +4,7 @@ const { Server } = require("socket.io");
 const crypto = require("crypto");
 const cors = require("cors");
 const app = express();
+require("dotenv").config();
 app.use(cors());
 const server = http.createServer(app); // 👈 wrap express
 const io = new Server(server, {
@@ -15,6 +16,7 @@ const axios = require("axios");
 const rooms = new Set();
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../client')));
+const PYTHON_URL = process.env.PYTHON_BACKEND_URL;
 
 function generateRoomCode() {
     return crypto.randomUUID().slice(0, 8).toUpperCase();
@@ -60,7 +62,7 @@ io.on("connection", (socket) => {
 
     try {
         // Call Python API
-        const response = await axios.post("http://localhost:5001/translate", {
+        const response = await axios.post(`${PYTHON_URL}/translate`, {
             text: text,
             source: sourcelang,
             target: targetlang
