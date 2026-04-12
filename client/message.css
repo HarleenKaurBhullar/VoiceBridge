@@ -10,7 +10,8 @@
 html, body {
     height: 100%;
     width: 100%;
-    background: #000; /* pure black */
+    background: url('./public/background.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;

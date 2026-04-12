@@ -75,4 +75,4 @@ def translate():
 
 if __name__ == "__main__":
     # Note: Using threaded=False can sometimes help with heavy ML models in debug mode
-    app.run(port=5001, debug=True, use_reloader=False)
+    app.run(port=7860, debug=True, use_reloader=False)

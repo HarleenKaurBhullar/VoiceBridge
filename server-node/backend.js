@@ -16,6 +16,7 @@ const axios = require("axios");
 const rooms = new Set();
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, "public")));
 const PYTHON_URL = process.env.PYTHON_BACKEND_URL;
 
 function generateRoomCode() {
