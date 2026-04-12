@@ -175,3 +175,20 @@ body {
     color: #c4b5fd; /* light purple */
 }
 
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    right: 8px;
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #aaa;
+}
+
+.footer a:hover {
+    opacity: 1;
+}
